@@ -1,0 +1,14 @@
+### dependecies
+
+*/node_modules/
+*/package-lock.json
+# */project.private.config.json
+
+### build
+
+*/dist
+*/build
+*/.swc
+
+### others
+.DS_Store

@@ -4,17 +4,10 @@
   </view>
 </template>
 
-<script>
+<script setup>
 import { ref } from 'vue'
 import { menuList } from '@/config/menu.js'
 import './index.less'
 
-export default {
-  setup () {
-    const msg = ref('Hello world')
-    return {
-      msg
-    }
-  }
-}
+const msg = ref('Hello world2')
 </script>

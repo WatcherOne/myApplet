@@ -1,5 +1,7 @@
 {
 	"compilerOptions": {
+		"module": "CommonJS",
+		"moduleResolution": "Node",
 		"baseUrl": ".",
 		"paths": {
 			"@/components/*": ["./components/*"],

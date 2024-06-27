@@ -10,7 +10,7 @@ export default defineConfig(async (merge) => {
   const baseConfig = {
     projectName: 'myApplet',
     date: '2024-6-27',
-    designWidth: 750,
+    designWidth: 750, // 设计稿尺寸
     deviceRatio: {
       640: 2.34 / 2,
       750: 1,
@@ -19,14 +19,27 @@ export default defineConfig(async (merge) => {
     },
     sourceRoot: 'src',
     outputRoot: 'dist',
+    // 配置Taro插件
     plugins: [],
+    // 定义一些全局变量供业务使用
+    defineConstants: {
+    },
+    // 配置目录别名
+		// 为了让我们编辑器识得别名需要在 jsconfig/tsconfig 配置自动补全如下
+		/**
+		 * complerOptions: {
+		 *    baseUrl: '.',
+		 *    paths: {
+		 *      '@/components/*': ['./src/components/*']    
+		 *    }
+		 * }
+		 */
     alias: {
       '@/components': path.resolve(__dirname, '..', 'src/components'),
       '@/config': path.resolve(__dirname, '..', 'src/config'),
       '@/utils': path.resolve(__dirname, '..', 'src/utils')
     },
-    defineConstants: {
-    },
+    // 用于把文件从源目录直接拷贝到编译后的生成目录
     copy: {
       patterns: [
       ],
@@ -36,8 +49,10 @@ export default defineConfig(async (merge) => {
     framework: 'vue3',
     compiler: 'webpack5',
     cache: {
-      enable: false // Webpack 持久化缓存配置，建议开启。默认配置请参考：https://docs.taro.zone/docs/config-detail#cache
+      // Webpack 持久化缓存配置，建议开启。默认配置请参考：https://docs.taro.zone/docs/config-detail#cache
+      enable: false 
     },
+    // 专属小程序的配置
     mini: {
       postcss: {
         pxtransform: {
@@ -61,6 +76,7 @@ export default defineConfig(async (merge) => {
         }
       }
     },
+    // 专属H5配置
     h5: {
       publicPath: '/',
       staticDirectory: 'static',
@@ -84,14 +100,6 @@ export default defineConfig(async (merge) => {
             namingPattern: 'module', // 转换模式，取值为 global/module
             generateScopedName: '[name]__[local]___[hash:base64:5]'
           }
-        }
-      }
-    },
-    rn: {
-      appName: 'taroDemo',
-      postcss: {
-        cssModules: {
-          enable: false, // 默认为 false，如需使用 css modules 功能，则设为 true
         }
       }
     }
