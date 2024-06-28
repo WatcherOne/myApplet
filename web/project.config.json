@@ -2,6 +2,7 @@
   "miniprogramRoot": "dist/",
   "projectname": "myApplet",
   "description": "this is a personal project",
+  "appId": "${appid}",
   "setting": {
     "urlCheck": true,
     "es6": true,
