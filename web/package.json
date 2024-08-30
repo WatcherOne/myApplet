@@ -56,7 +56,7 @@
     "@babel/core": "^7.8.0",
     "@tarojs/cli": "3.6.32",
     "@types/webpack-env": "^1.13.6",
-    "webpack": "5.78.0",
+    "webpack": "5.94.0",
     "@tarojs/taro-loader": "3.6.32",
     "@tarojs/webpack5-runner": "3.6.32",
     "babel-preset-taro": "3.6.32",
